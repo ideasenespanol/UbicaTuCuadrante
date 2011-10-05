@@ -14,7 +14,7 @@ var run = function(application) {
 
 // shows id passed
 , display = function(id) {
-    x$(["#welcome", "#map", "#ciudades", "#ciudad_BOG"]).each(function(e, i) {
+    x$(["#welcome", "#map", "#ciudades", "#ciudad_BOG", "#ciudad_BAR", "#ciudad_BUC", "#ciudad_CAL", "#ciudad_CAR", "#ciudad_CUC", "#ciudad_MED", "#ciudad_PER"]).each(function(e, i) {
         var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
         x$(e).css({ 'display':display })
     });
