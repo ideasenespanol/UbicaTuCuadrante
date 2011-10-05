@@ -13,19 +13,7 @@ run(function () {
     
     // a little inline controller
     when('#welcome');
-    when('#settings', function() {
-		// load settings from store and make sure we persist radio buttons.
-		store.get('config', function(saved) {
-			if (saved) {
-				if (saved.map) {
-					x$('input[value=' + saved.map + ']').attr('checked',true);
-				}
-				if (saved.zoom) {
-					x$('input[name=zoom][value="' + saved.zoom + '"]').attr('checked',true);
-				}
-			}
-		});
-	});
+    when('#ciudades');
     when('#map', function () {
         store.get('config', function (saved) {
             // construct a gmap str
@@ -45,12 +33,7 @@ run(function () {
             });
         });
     });
-    when('#save', function () {
-        store.save({
-            key:'config',
-            map:ui('map'),
-            zoom:ui('zoom')
-        });
-        display('#welcome');
+    when('#selbarrio', function () {
+        display('#ciudad_' + ui('ciudad'));
     });
 });
