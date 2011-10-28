@@ -7,15 +7,22 @@
 <link rel="stylesheet" href="assets/jquery/jquery.mobile.1.0rc2.min.css" />
 <script src="assets/jquery/jquery.1.6.4.min.js"></script>
 <script src="assets/jquery/jquery.mobile.1.0rc2.min.js"></script>
+<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript" charset="utf-8">
+<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js"
+	type="text/javascript" charset="utf-8"></script>
 
-	$(function() {
-		alert("Ingreso");
-		$('.info').empty().append("Paso");
-	});
-</script>
+<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js"
+	type="text/javascript" charset="utf-8"></script>
+
+<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js"
+	type="text/javascript" charset="utf-8"></script>
+
+<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript"
+	charset="utf-8"></script>
+
 
 </head>
 <body>
@@ -32,6 +39,23 @@
 			<img id="static_map" src="assets/img/staticmap.png">
 		</div>
 	</div>
+
+	<script type="text/javascript" charset="utf-8">
+		alert("Ingreso");
+		$('.info').empty().append("Paso");
+		var path = "http://maps.google.com/maps/api/staticmap?center=";
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var location = "" + position.coords.latitude + ","
+					+ position.coords.longitude;
+			path += location;
+			path += "&size=250x250&markers=color:red|label:Mi ubicacion|";
+			path += location + "&sensor=false";
+
+			x$('img#static_map').attr('src', path);
+		}, function() {
+			x$('img#static_map').attr('src', "assets/img/gpsfailed.png");
+		});
+	</script>
 
 </body>
 </html>
