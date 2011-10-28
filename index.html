@@ -9,35 +9,26 @@
 <script src="assets/jquery/jquery.mobile-1.0rc2.min.js"></script>
 </head>
 <body>
-	<div id="title_bar">Ubica tu Cuadrante</div>
+	<div data-role="page" data-theme="b">
+		<header data-role="header">
+			<h2>Ubica tu Cuadrante</h2>
+		</header>
 
-	<div id="welcome" class="view">
 		<center>
 			<img src="icon.png" />
 		</center>
-		<br />
-		<div class="app_button" id="map_button">Mostrar mi ubicación</div>
-		<br />
-		<div class="app_button" id="ciudades_button">Ubicar cuadrante</div>
-	</div>
 
-	<div id="map" class="view">
-		<div class="map_image">
-			<img id="static_map" src="assets/img/staticmap.png">
+		<div id="ciudades" class="view" data-role="content">
+			<ul data-role="listview" data-theme="c" data-dividertheme="e">
+				<li><a href=gps.html data-transition="flip">Usar GPS</a>
+				</li>
+				<li><a href=bogota.html data-transition="flip">Bogota</a>
+				</li>
+				<li><a href=medellin.html data-transition="flip">Medellin</a>
+				</li>
+			</ul>
 		</div>
-		<p>Esta es su ubicación</p>
-		<div class="app_button" id="welcome_button">Regresar</div>
+
 	</div>
-
-	<div id="ciudades" class="view" data-role="content">
-		<ul data-role="listview" data-theme="c" data-dividertheme="e">
-			<li><a href=bogota.html
-				data-transition="flip">Bogota</a></li>
-			<li><a href=medellin.html
-				data-transition="flip">Medellin</a></li>
-		</ul>
-	</div>
-
-
 </body>
 </html>
