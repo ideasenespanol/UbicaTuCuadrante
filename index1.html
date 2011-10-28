@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+		<title>Ubica tu cuadrante</title>
+		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
+		
+		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+ 		<div id="title_bar">Ubica Tu cuadrante</div>
+
+		<div id="welcome" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <div class="app_button" id="map_button">Mostrar mi ubicación</div><br/>
+  	      <div class="app_button" id="ciudades_button">Ubicar cuadrante</div>
+		</div>
+
+		<div id="map" class="view">
+		  <div class="map_image">
+              <img id="static_map" src="assets/img/staticmap.png">
+		  </div>
+		  <p>Aca esta usted</p>
+		  <div class="app_button" id="welcome_button">Regresar</div>
+		</div>
+
+		<div id="ciudades" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="ciudades_form">
+		    <fieldset>
+		      <legend>Seleccione la ciudad</legend>
+		      <select name="ciudad">
+		      		<option value="BOG">BOGOTA</option>
+		      		<option value="BAR">BARRANQUILLA</option>
+		      		<option value="BUC">BUCARAMANGA</option>
+		      		<option value="CAL">CALI</option>
+		      		<option value="CAR">CARTAGENA</option>
+		      		<option value="CUC">CUCUTA</option>
+		      		<option value="MED">MEDELLIN</option>
+		      		<option value="PER">PEREIRA</option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="selbarrio_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+
+		<div id="ciudad_BOG" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosBOG_form">
+		    <fieldset>
+		      <legend>Seleccione la localidad</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      		<option value="KND">BARRIOS UNIDOS </option>
+		      		<option value="KND">BOSA</option>
+		      		<option value="KND">CANDELARIA </option>
+		      		<option value="KND">CHAPINERO </option>
+		      		<option value="KND">CIUDAD BOLIVAR </option>
+		      		<option value="KND">ENGATIVA</option>
+		      		<option value="KND">FONTIBON</option>
+		      		<option value="KND">KENNEDY </option>
+		      		<option value="KND">MARTIRES </option>
+		      		<option value="KND">PUENTE ARANDA </option>
+		      		<option value="KND">RAFAEL URIBE </option>
+		      		<option value="KND">SAN CRISTOBAL </option>
+		      		<option value="KND">SANTA FE </option>
+		      		<option value="KND">SUBA </option>
+		      		<option value="KND">SUMAPAZ </option>
+		      		<option value="KND">TEUSAQUILLO</option>
+		      		<option value="KND">TUNJUELITO </option>
+		      		<option value="KND">USAQUEN </option>
+		      		<option value="KND">USME</option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+		
+		<div id="ciudad_BAR" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosBAR_form">
+		    <fieldset>
+		      <legend>Localidades de Barranquilla</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+		
+		<div id="ciudad_BUC" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosBUC_form">
+		    <fieldset>
+		      <legend>Localidades de Bucaramanga</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+
+		<div id="ciudad_CAL" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosCAL_form">
+		    <fieldset>
+		      <legend>Localidades de Cali</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+
+		<div id="ciudad_CAR" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosCAR_form">
+		    <fieldset>
+		      <legend>Localidades de Cartagena</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+		
+		<div id="ciudad_CUC" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosCUC_form">
+		    <fieldset>
+		      <legend>Localidades de Cucuta</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+		
+		<div id="ciudad_MED" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosMED_form">
+		    <fieldset>
+		      <legend>Localidades de Medellin</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+		
+		<div id="ciudad_PER" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <form id="barriosPER_form">
+		    <fieldset>
+		      <legend>Localidades de Pereira</legend>
+		      <select name="localidad">
+		      		<option value="KND">ANTONIO NARIÑO </option>
+		      </select>
+		    </fieldset>
+		    <div class="app_button" id="showcuadrantes_button">Continuar</div>
+		    <div class="app_button" id="welcome_button">Regresar</div>
+	      </form>
+		</div>
+
+	</body>
+</html>
