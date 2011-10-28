@@ -4,8 +4,10 @@
 <head>
 <meta charset="UTF-8" />
 <title>Cuadrante por GPS</title>
-<script src="assets/jquery/jquery-1.6.4.min.js"></script>
-<script src="assets/jquery/jquery.mobile-1.0rc2.min.js"></script>
+<link rel="stylesheet" href="assets/jquery/jquery.mobile.1.0rc2.min.css" />
+<link rel="stylesheet" href="assets/jqtouch/jqtouch.min.css" />
+<script src="assets/jquery/jquery.1.6.4.min.js"></script>
+<script src="assets/jquery/jquery.mobile.1.0rc2.min.js"></script>
 <script src="assets/jqtouch/jqtouch.min.js"></script>
 <script src="assets/extensions/jqt.location.js"></script>
 
@@ -28,6 +30,7 @@
 		// We also set it to a variable, so we can know
 		// right away if it's working or not
 		var lookup = jQT.updateLocation(function(coords) {
+			alert("Paso");
 			if (coords) {
 				setDisplay('Latitude: ' + coords.latitude + '<br />Longitude: '
 						+ coords.longitude);
@@ -44,14 +47,19 @@
 
 </head>
 <body>
-	<div>
+	<div data-role="page" data-theme="b">
+		<header data-role="header">
+			<h2>Cuadrantes</h2>
+		</header>
+
 		<div class="toolbar">
-			<h1>Geo Location</h1>
+			<h3>Tu ubicación y cuadrante(s) mas cercanos</h3>
 		</div>
 		<div class="info"></div>
 		<div class="map_image">
 			<img id="static_map" src="assets/img/staticmap.png">
 		</div>
 	</div>
+
 </body>
 </html>
