@@ -14,7 +14,7 @@ var run = function(application) {
 
 // shows id passed
 , display = function(id) {
-    x$(["#welcome", "#map", "#ciudades", "#ciudad_BOG", "#ciudad_BAR", "#ciudad_BUC", "#ciudad_CAL", "#ciudad_CAR", "#ciudad_CUC", "#ciudad_MED", "#ciudad_PER"]).each(function(e, i) {
+    x$(["#welcome", "#map"]).each(function(e, i) {
         var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
         x$(e).css({ 'display':display })
     });
@@ -33,9 +33,4 @@ var run = function(application) {
 
 // gets the value of the setting from the ui
 , ui = function(setting) {
-    var combo = x$('#ciudades_form')[0][setting];
-    for (var i = 0, l = combo.length; i < l; i++) {
-        if (combo[i].selected)
-            return combo[i].value;
-    }
 };

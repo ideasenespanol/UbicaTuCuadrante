@@ -11,7 +11,6 @@ run(function () {
     
     // a little inline controller
     when('#welcome');
-    when('#ciudades');
     when('#map', function () {
         store.get('config', function (saved) {
             // construct a gmap str
@@ -30,8 +29,5 @@ run(function () {
                 x$('img#static_map').attr('src', "assets/img/gpsfailed.png");
             });
         });
-    });
-    when('#selbarrio', function () {
-        display('#ciudad_' + ui('ciudad'));
     });
 });
