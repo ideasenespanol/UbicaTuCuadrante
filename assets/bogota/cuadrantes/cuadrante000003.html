@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport"
+	content="initial-scale=1.0, user-scalable=no, width=device-width" />
+<title>Ubica tu cuadrante</title>
+<link rel="stylesheet" href="assets/jquery/jquery.mobile.1.0rc2.min.css" />
+<script src="assets/jquery/jquery.1.6.4.min.js"></script>
+<script src="assets/jquery/jquery.mobile.1.0rc2.min.js"></script>
+<script type="text/javascript">
+	function copiar(telefono) {
+		$.copy(telefono);
+	}
+</script>
+</head>
+<body>
+	<div data-role="page" data-theme="b">
+		<header data-role="header">
+			<h1>Cuadrante 000003</h1>
+			<a href="index.html" data-icon="home" data-theme="b">Inicio</a>
+			<a href="../../bogota.html" data-icon="back" data-theme="b">Bogot&acute;</a>
+		</header>
+
+		<div id="infocuadrante" class="view" data-role="content">
+			<ul data-role="listview" data-theme="c" data-dividertheme="e">
+				<li data-role="list-divider">Celular</li>
+				<li><a href="javascript:copiar('3002011563')">3002011563</a></li>
+				<li data-role="list-divider">Grado y nombre de los responsables</li>
+				<li>IT. GALVIS LEGUIZAMON HUGO ANTONIO</li>
+				<li>SI. FLOREZ TEJADA ELKIN CESAR</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
