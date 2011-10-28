@@ -5,43 +5,15 @@
 <meta charset="UTF-8" />
 <title>Cuadrante por GPS</title>
 <link rel="stylesheet" href="assets/jquery/jquery.mobile.1.0rc2.min.css" />
-<link rel="stylesheet" href="assets/jqtouch/jqtouch.min.css" />
 <script src="assets/jquery/jquery.1.6.4.min.js"></script>
 <script src="assets/jquery/jquery.mobile.1.0rc2.min.js"></script>
-<script src="assets/jqtouch/jqtouch.min.js"></script>
-<script src="assets/extensions/jqt.location.js"></script>
 
 
 <script type="text/javascript" charset="utf-8">
-	var jQT = new $.jQTouch({
-		icon : 'jqtouch.png',
-		addGlossToIcon : false,
-		startupScreen : 'jqt_startup.png',
-		statusBar : 'black'
-	});
 
 	$(function() {
-		function setDisplay(text) {
-			$('.info').empty().append(text)
-		}
-
-		// We pass "updateLocation" a callback function,
-		// to run once we have the coordinates.
-		// We also set it to a variable, so we can know
-		// right away if it's working or not
-		var lookup = jQT.updateLocation(function(coords) {
-			alert("Paso");
-			if (coords) {
-				setDisplay('Latitude: ' + coords.latitude + '<br />Longitude: '
-						+ coords.longitude);
-			} else {
-				setDisplay('Device not capable of geo-location.');
-			}
-		});
-
-		if (lookup) {
-			setDisplay('Looking up location&hellip;');
-		}
+		alert("Ingreso");
+		$('.info').empty().append("Paso");
 	});
 </script>
 
@@ -56,7 +28,7 @@
 			<h3>Tu ubicación y cuadrante(s) mas cercanos</h3>
 		</div>
 		<div class="info"></div>
-		<div class="map_image">
+		<div class="map_image" align="center">
 			<img id="static_map" src="assets/img/staticmap.png">
 		</div>
 	</div>
