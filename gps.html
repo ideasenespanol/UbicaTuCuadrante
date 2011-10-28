@@ -1,61 +1,42 @@
-
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<title>Cuadrante por GPS</title>
-<link rel="stylesheet" href="assets/jquery/jquery.mobile.1.0rc2.min.css" />
-<script src="assets/jquery/jquery.1.6.4.min.js"></script>
-<script src="assets/jquery/jquery.mobile.1.0rc2.min.js"></script>
-<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+		<title>Ubica tu cuadrante</title>
+		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
+		
+		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+ 		<div id="title_bar">Ubica tu cuadrante por GPS</div>
 
-<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js"
-	type="text/javascript" charset="utf-8"></script>
-
-<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js"
-	type="text/javascript" charset="utf-8"></script>
-
-<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js"
-	type="text/javascript" charset="utf-8"></script>
-
-<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript"
-	charset="utf-8"></script>
-
-
-</head>
-<body>
-	<div data-role="page" data-theme="b">
-		<header data-role="header">
-			<h2>Cuadrantes</h2>
-		</header>
-
-		<div class="toolbar">
-			<h3>Tu ubicaciÃ³n y cuadrante(s) mas cercanos</h3>
+		<div id="welcome" class="view">
+		  <center><img src="icon.png"/></center><br/>
+		  <div class="app_button" id="map_button">Mostrar mi ubicación</div><br/>
 		</div>
-		<div class="info"></div>
-		<div class="map_image" align="center">
-			<img id="static_map" src="assets/img/staticmap.png">
+
+		<div id="map" class="view">
+		  <div class="map_image">
+              <img id="static_map" src="assets/img/staticmap.png">
+		  </div>
+		  <p>Se muestra su ubicación y del cuadrante mas cercano</p>
+		  <div class="app_button" id="welcome_button"><a href="index.html">Regresar</a></div>
 		</div>
-	</div>
 
-	<script type="text/javascript" charset="utf-8">
-		alert("Ingreso");
-		$('.info').empty().append("Paso");
-		var path = "http://maps.google.com/maps/api/staticmap?center=";
-		navigator.geolocation.getCurrentPosition(function(position) {
-			var location = "" + position.coords.latitude + ","
-					+ position.coords.longitude;
-			path += location;
-			path += "&size=250x250&markers=color:red|label:Mi ubicacion|";
-			path += location + "&sensor=false";
-
-			x$('img#static_map').attr('src', path);
-		}, function() {
-			x$('img#static_map').attr('src', "assets/img/gpsfailed.png");
-		});
-	</script>
-
-</body>
+	</body>
 </html>
